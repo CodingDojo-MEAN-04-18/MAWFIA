@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    	<title>JavaScript Currying</title>
+        <script src="../jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+    	<script>
+
+            $(document).ready( () => {
+
+                function ninjaBelt(ninja){
+                  return function belt(beltColor){ //note the closure here!
+                    console.log("Ninja "+ ninja + " has earned a " + beltColor +" belt.");
+                    return ((test) => { console.log(test);});
+                  }
+                }
+                ninjaBelt('Eileen')('black')("happy"); //note the double invocation here.
+
+
+            });
+        </script>
+    </body>
+</html>

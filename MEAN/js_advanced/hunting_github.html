@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    	<title>Hunting GitHub</title>
+        <script src="../jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+
+        <button>Click Me</button>
+        <p></p>
+
+    	<script>
+
+            $(document).ready( () => {
+
+
+                $('body').on('click','button', () => { $.get("https://api.github.com/users/mawfia", data => $('p').html(data.name))});
+
+            });
+        </script>
+    </body>
+</html>

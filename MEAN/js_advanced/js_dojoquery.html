@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    	<title>DojoQuery</title>
+        <script src="../jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+
+        <h1 id="test">Andrew</h1>
+    	<script>
+
+            $(document).ready( () => {
+
+                'use strict';
+                const $Dojo = function(id) {
+                  return (function($dojo){
+                    $dojo.myId = document.getElementById(id);
+                    $dojo.click = function (callback) {
+                      this.myId.addEventListener("click", callback);
+                    };
+
+                    $dojo.hover = function (hoverin, hoverout) {
+                      this.myId.addEventListener("mouseover", hoverin);
+                      this.myId.addEventListener("mouseout", hoverout);
+                    };
+
+                    return $dojo;
+                  })({});
+                };
+
+                $Dojo("test").click(function() { console.log("The button was clicked!") });
+
+            });
+        </script>
+    </body>
+</html>
