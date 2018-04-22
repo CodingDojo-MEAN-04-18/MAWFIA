@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    	<title>Inheritance and Super</title>
+    </head>
+    <body>
+    	<script>
+
+            class Ninja {
+                constructor(name) {
+                    this.name = name;
+                    this.health = 100;
+                    this.speed = 3;
+                    this.strength = 3;
+                }
+
+                sayName(){
+                    console.log(`This ninja's name is ${this.name}`);
+                    return this;
+                } //- This should log that Ninja's name to the console.
+                showStats() {
+                    console.log(`Name: ${this.name}, Health: ${this.health}, Speed: ${this.speed}, Strength: ${this.strength}`);
+                    return this;
+                } //- This should show the Ninja's Strength and Speed, as well as their health.
+                drinkSake() {
+                    this.health+=10;
+                    return this;
+                } //- This should add +10 Health to the Ninja
+            }
+
+            class Sensei extends Ninja{
+                constructor(name) {
+                    super(name);
+                    super.health = 200;
+                    super.speed = 10;
+                    super.strengh = 10;
+                    this.wisdom = 10;
+                }
+
+                speakWisdom(){
+                    super.drinkSake();
+                    console.log("What one programmer can do in one month, two programmers can do in two weeks.");
+                    return this;
+                }
+            }
+            const michael = new Ninja("Michael");
+            michael.sayName().drinkSake().showStats();
+            const andrew = new Sensei("Andrew");
+            andrew.showStats().speakWisdom().showStats();
+
+        </script>
+    </body>
+</html>

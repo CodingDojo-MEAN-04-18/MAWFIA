@@ -1,0 +1,40 @@
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript DOM I</title>
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <h1>Students</h1>
+        <ul id="main">
+            <!-- this is empty-->
+        </ul>
+        <script>
+            function appendList(array, target, type){
+
+                array.forEach( x => {
+                    let y = (type == null ? document.createElement('li') : document.createElement(type));
+                    y.innerHTML = x;
+                    let tags = ['h1','ul','p','h2','h3','h4','h5','h6','ol','body'];
+                    let create_tag = (tags.find( e => e == target.toLowerCase() ) ? document.createElement(target) : null);
+                    if(create_tag)
+                        if(create_tag === 'body')
+                            document.getElementsByTagName(target)[0].appendChild(y)
+                        else {
+                            create_tag.appendChild(y);
+                            document.getElementsByTagName('body')[0].appendChild(y);
+                        }
+                    else document.getElementById(target).appendChild(y);
+                });
+            };
+            let students = ["Jeff", "Jenny", "Javier", "Joslyn", "Joe", "Jane", "Django"];
+            let target_id = "main";
+
+            appendList(students, "body", 'p');
+        </script>
+    </body>
+</html>

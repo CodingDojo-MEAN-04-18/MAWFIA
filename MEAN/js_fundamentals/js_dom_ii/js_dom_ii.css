@@ -1,0 +1,12 @@
+/* border and styling for table data */
+td{
+        border: 1px solid silver;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+}
+/* background and bolding for the first element of our rows and data */
+td:first-child, tr:first-child{
+        background-color: silver;
+        font-weight: bold;
+}

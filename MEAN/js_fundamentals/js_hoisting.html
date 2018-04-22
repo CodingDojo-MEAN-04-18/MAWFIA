@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    	<title>JavaScript Hoisting</title>
+    </head>
+    <body>
+        <script>
+
+            /*console.log(hello);
+            var hello = 'world';
+            */ //undefined
+
+            /*var needle = 'haystack';
+            test();
+
+            function test(){
+            	var needle = 'magnet';
+            	console.log(needle);
+            }*/  //magnet
+
+
+            /*var brendan = 'super cool';
+            function print(){
+            	brendan = 'only okay';
+            	console.log(brendan);
+            }
+            console.log(brendan);*/ // super cool
+
+            /*var food = 'chicken';
+            console.log(food); // chicken
+            eat();
+            function eat(){
+            	food = 'half-chicken';
+            	console.log(food); // half chicken
+            	var food = 'gone';
+            }*/
+
+            /*mean();  // error not a function
+            console.log(food); // error
+            var mean = function() {
+            	food = "chicken";
+            	console.log(food);
+            	var food = "fish";
+            	console.log(food);
+            }
+            console.log(food); // error
+            */
+
+            /*console.log(genre); //undefined
+            var genre = "disco";
+            rewind(); // rock r&b
+            function rewind() {
+            	genre = "rock";
+            	console.log(genre);
+            	var genre = "r&b";
+            	console.log(genre);
+            }
+            console.log(genre); // rock
+            */
+
+            dojo = "san jose";
+            console.log(dojo); // san jose
+            learn(); // seattle burbank
+            function learn() {
+            	dojo = "seattle";
+            	console.log(dojo);
+            	var dojo = "burbank";
+            	console.log(dojo);
+            }
+            console.log(dojo); // san jose
+        </script>
+    </body>
+</html>

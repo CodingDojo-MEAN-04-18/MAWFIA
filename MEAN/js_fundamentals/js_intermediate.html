@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Intermediate</title>
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- template.html -->
+        <script>
+
+            let x = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"];
+
+            function starString(n, c){
+                let string = '';
+                for(let x = 0; x < n; x++) c == null ? string += '*' : string += c;
+                return string;
+            }
+
+            function drawStars(x){
+                (x.map( i => typeof(i) === 'string' ? starString(i.length, i[0].toLowerCase()) : starString(i) )).forEach( e => console.log(e));
+            }
+            drawStars(x);
+        </script>
+    </body>
+</html>

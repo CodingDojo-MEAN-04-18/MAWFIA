@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Basics I</title>
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- template.html -->
+        <script>
+
+            /* Basic I
+
+            let x = [];
+            console.log(x);
+            x.push('coding'); x.push('dojo'); x.push('rocks');
+            x.pop();
+            console.log(x);*/
+
+
+            /* Basic II
+            const y = [];
+            console.log(y);  //output -> []
+            y.push(88);
+            console.log(y); //output -> [88]
+            y.push(100);
+            y = null; //error, cannot change const from array to null
+            */
+
+            /* Basic III
+            let z = [9,10,6,5,-1,20,13,2];
+            //z.forEach( (x) => { console.log(x); });
+            //z.forEach( (x, i) => i < z.length-1 ? console.log(x) : null);
+            for(let i = 0; i < z.length-1; i++) console.log(z[i]);
+            */
+
+            /* Basic IV
+            let names = ['Kadie', 'Joe', 'Fritz', 'Pierre', 'Alphonso'];
+            //names.forEach( x => console.log(x.length));
+            names.forEach( x =>  x.length > 5 ? console.log(x) : null);
+            */
+
+            /* Basic V
+              You can look up more information about uppercasing Strings in JavaScript at:
+              https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/toUpperCase
+              */
+            const yell = function(string){
+                return string.toUpperCase();
+            }
+            console.log(yell("hello"));
+        </script>
+    </body>
+</html>

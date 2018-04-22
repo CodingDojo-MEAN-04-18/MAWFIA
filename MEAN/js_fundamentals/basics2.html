@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Basics II</title>
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- template.html -->
+        <script>
+
+            let test1 = function magic_multiply(x, y){
+
+                if(typeof x === 'number' && typeof y === 'number'){
+                    return x+y !== 0 ? x*y : "All inputs 0";
+                }
+                else if(typeof y === 'number'){
+                    if(Array.isArray(x)) return x.map( v => v*y );
+                    else if (typeof x === 'string'){
+                        let t = '';
+                        for(let i = 0; i < y; i++) t+=x;
+                        return t;
+                    }
+                    else return "Error: Cannot multiply by string";
+                }
+                else return "Error: multiplier must be a number"
+            }
+
+            console.log(test1('joey', 4));
+        </script>
+    </body>
+</html>

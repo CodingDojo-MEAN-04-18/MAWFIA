@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    	<title>Ninja Class</title>
+    </head>
+    <body>
+    	<script>
+
+            function Ninja(name) {
+                this.name = name;
+                this.health = 100;
+                let speed = 3;
+                let strength = 3;
+
+                this.sayName = () => {
+                    console.log("My ninja name is " + name + "!");
+                    return this;
+                } //- This should log that Ninja's name to the console.
+                this.showStats = () => {
+                    console.log("Name: " + this.name + ", Health: " + this.health + ", Speed: " + speed + ", Strength: " + strength);
+                    return this;
+                } //- This should show the Ninja's Strength and Speed, as well as their health.
+                this.drinkSake = () => {
+                    this.health+=10;
+                    return this;
+                } //- This should add +10 Health to the Ninja
+                this.punch = (ninja) => {
+                    if(ninja.__proto__.constructor.name === 'Ninja'){
+                        ninja.health -= 5;
+                        console.log(ninja.name + " was punched by " + this.name + " and lost 5 Health!")
+                    }
+                    else console.log("Invalid object type " + ninja.__proto__.constructor.name);
+                }
+                this.kick = (ninja) => {
+                    if(ninja.__proto__.constructor.name === "Ninja"){
+                        ninja.health -= 15*strength;
+                        console.log(ninja.name + " was kicked by " + this.name + " and lost " + (15*strength) + " Health!")
+                    }
+                    else console.log("Invalid object type" + ninja.__proto__.constructor.name);
+                }
+            }
+
+
+            // Attach class methods using .prototype
+        /*    Person.prototype.greet = function() {
+            console.log("Hello my name is " + this.name + " and I am " + this.age + " years old!");
+            return this;
+            };
+            // Create new instances with the new keyword
+            const amelia = new Person('Amelia', 36);
+            // Create instance methods by attaching the function directly to an instance
+            amelia.sing = function() {
+            console.log("Lalalala!");
+        };*/
+            const andrew = new Ninja("Andrew");
+            const michael = new Ninja("Michael");
+            michael.punch(andrew);
+            andrew.showStats();
+            andrew.punch([]);
+
+        </script>
+    </body>
+</html>

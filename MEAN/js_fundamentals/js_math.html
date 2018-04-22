@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Mathu</title>
+        <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <!-- template.html -->
+        <script>
+
+            /*
+            function zero_negativity(x) {
+                return x.find( e => e < 0 ) ? true : false;
+            }
+            console.log(zero_negativity([0,2,3,4]));
+            */
+
+            /*function is_even(x){
+                return x%2 === 0;
+            }
+            console.log(is_even(1));
+            */
+
+            /*function how_many_even(x){
+                return x.filter( e => e%2 === 0);
+            }
+
+            console.log(how_many_even([1,2,3,4,5,8,10]));
+            */
+
+            /*function create_dummy_array(n){
+                let x = [];
+                for(let i = 0; i < n; i++) x.push(Math.round((Math.random()*9)));
+
+                return x;
+            }
+
+            console.log( create_dummy_array(6) );*/
+
+            function random_choice(x){
+                return x.length ? x[Math.round((Math.random()*(x.length-1)))] : null;
+            }
+
+            console.log(random_choice([1,2,3,4,5,6]));
+        </script>
+    </body>
+</html>

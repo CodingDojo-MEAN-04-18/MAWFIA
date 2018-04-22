@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    	<title>Deck of Cards</title>
+    </head>
+    <body>
+    	<script>
+
+            class Card{
+                constructor(rank, suit){
+                    this.rank = rank;
+                    this.suit = suit;
+                }
+
+                show(){
+                    console.log(`${this.rank} of ${this.suit}`);
+                }
+
+            }
+
+            class Player{
+                constructor(name){
+                    this.name = name;
+                    this.hand = [];
+                }
+
+                take(card){
+                    if(card.__proto__.constructor.name === 'Card') this.hand.push(card);
+
+                    return this;
+                }
+
+                discard(card){
+                    if(this.hand.length > 0)
+                        return card == null ?
+                            this.hand.pop() :
+                            this.hand.splice(this.hand.indexOf(card),this.hand.indexOf(card) !== -1 ? 1 : -1);
+                }
+            }
+
+            class Deck {
+                constructor() {
+                    const ranks = ['ace','king', 'queen', 'jack', 'ten', 'nine', 'eight', 'seven', 'six', 'five', 'four', 'three', 'two'];
+                    const suits = ['clubs','diamonds','hearts','spades'];
+                    Deck.prototype.deck = [];
+                    this.deck = [];
+
+                    if(Deck.prototype.deck.length === 0){
+                        for(let suit of suits)
+                            for(let rank of ranks) Deck.prototype.deck.push(new Card(rank, suit));
+                    }
+
+                    this.reset();
+                }
+
+
+                display(){
+                    for(var card of this.deck) card.show();
+                    return this;
+                }
+
+                shuffle(){
+                    for(var card in this.deck) {
+                        //console.log(card);
+                        let new_card = Math.floor(Math.random()*this.deck.length);
+                        let old_card = this.deck[card];
+                        this.deck[card] = this.deck[new_card];
+                        this.deck[new_card] = old_card;
+                    }
+                    return this;
+                }
+
+                reset(){
+                    this.deck = [];
+                    for(let card in Deck.prototype.deck) this.deck[card] = Deck.prototype.deck[card];
+                    return this;
+                }
+
+                deal(player){
+                    if(player.__proto__.constructor.name === 'Player'){
+                        player.take(this.deck.splice(Math.floor(Math.random()*this.deck.length), 1)[0]);
+                        return this;
+                    }
+
+                    return this.deck.splice(Math.floor(Math.random()*this.deck.length), 1);
+                }
+            }
+                // child Circle class
+
+            //console.log("♥");
+            const deck1 = new Deck();
+            const player1 = new Player("Bob");
+            deck1.deal(player1).deal(player1);
+            //deck1.reset();
+            var card = player1.hand[1];
+            //console.log(card);
+            player1.discard(card);
+            console.log(player1);
+
+
+        </script>
+    </body>
+</html>
