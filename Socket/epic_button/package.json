@@ -1,0 +1,22 @@
+{
+  "name": "epic_button",
+  "version": "1.0.0",
+  "description": "Epic Button Game using socket.io",
+  "main": "server.js",
+  "scripts": {
+    "test": "jungle",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "epic",
+    "game",
+    "socket.io"
+  ],
+  "author": "Michael Andrew Williams",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "ejs": "^2.5.9",
+    "express": "^4.16.3",
+    "socket.io": "^2.1.0"
+  }
+}

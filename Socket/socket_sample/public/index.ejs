@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <title>Socket Sample App</title>
+      <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+      <script src="socket.io/socket.io.js"></script>
+   </head>
+   <body>
+       <div id="container">
+           <h2>Socket Assignment</h2>
+           <script>
+                $(document).ready( () => {
+
+                    var socket = io(); //1
+
+                    socket.on('greeting', data => { //4
+                        console.log(data); //5
+                        //$('h2').text(data.msg);
+                        socket.emit('thankyou', { msg: 'Thank you for connecting me! -Client' }); //6
+                    });
+
+                })
+           </script>
+       </div>
+   </body>
+</html>

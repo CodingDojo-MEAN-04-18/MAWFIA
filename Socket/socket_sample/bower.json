@@ -1,0 +1,25 @@
+{
+  "name": "socket_sample",
+  "description": "sample socket application",
+  "main": "server.js",
+  "authors": [
+    "Michael Andrew Williams"
+  ],
+  "license": "UNLICENSED",
+  "keywords": [
+    "Socket",
+    "Sample"
+  ],
+  "homepage": "https://github.com/CodingDojo-MEAN-04-18/MAWFIA",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
