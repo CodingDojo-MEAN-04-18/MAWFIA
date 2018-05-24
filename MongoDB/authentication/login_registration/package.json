@@ -1,0 +1,29 @@
+{
+  "name": "login_registration",
+  "version": "1.0.0",
+  "description": "bcrypt, mongo, node, express",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "brcypt",
+    "mongo",
+    "node",
+    "express"
+  ],
+  "author": "Michael Andrew Williams",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-as-promised": "^1.1.0",
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.6",
+    "moment": "^2.22.1",
+    "mongoose": "^5.1.1",
+    "promise": "^8.0.1",
+    "socket.io": "^2.1.1"
+  }
+}

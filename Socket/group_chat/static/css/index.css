@@ -1,0 +1,18 @@
+#init{
+    outline: solid black 1px;
+    width: 300px;
+    margin: 20% auto;
+    padding: 5px 20px 20px 20px;
+}
+
+label{
+    display: block;
+}
+
+input[name]{
+    width: 95%;
+}
+
+input[type=submit]{
+    margin-left: 87%;
+}

@@ -1,0 +1,21 @@
+#chatroom{
+    margin: 0px auto;
+    width: 80%;
+}
+
+.chat_window{
+    outline: solid black 1px;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    margin: 15px 15px 0px 0px;
+}
+.chat_window h3{
+    background-color: gray;
+    text-align: center;
+    margin: 0px;
+}
+
+h1{
+    text-align: center;
+}
